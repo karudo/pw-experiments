@@ -4,7 +4,8 @@ import ForEach from '../components/ForEach';
 import Value from '../components/Value'
 
 const qwe = [{
-  asd: 19998
+  asd: 19998,
+  zxc: "segh"
 }, {
   asd: 'sss',
   zxc: 9

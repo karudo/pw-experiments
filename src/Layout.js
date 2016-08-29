@@ -11,7 +11,8 @@ export default function Layout(props) {
       <nav className="nav">
         <div className="nav-left">
           <Link to="/first" className="nav-item is-tab">first</Link>
-          <Link to="/second" className="nav-item">second</Link>
+          <Link to="/counter" className="nav-item">counter</Link>
+          <Link to="/list" className="nav-item">list</Link>
         </div>
       </nav>
       {props.children}

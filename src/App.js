@@ -7,12 +7,13 @@ import {Router, Route, browserHistory} from 'react-router'
 
 import reducer from './reducers';
 
-const store = createStore(reducer);
 
 import Layout from './Layout';
+import First from './pages/First';
+import Counter from './pages/Counter'
+import List from './pages/List';
 
-import First from './First';
-import Second from './Second';
+const store = createStore(reducer, window.devToolsExtension && window.devToolsExtension());
 
 class App extends React.Component {
   render() {
@@ -21,7 +22,8 @@ class App extends React.Component {
         <Router history={browserHistory}>
           <Route path="/" component={Layout}>
             <Route path="first" component={First}/>
-            <Route path="second" component={Second}/>
+            <Route path="counter" component={Counter}/>
+            <Route path="list" component={List}/>
           </Route>
         </Router>
       </Provider>

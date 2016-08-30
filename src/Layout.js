@@ -13,6 +13,7 @@ export default function Layout(props) {
           <Link to="/first" className="nav-item is-tab">first</Link>
           <Link to="/counter" className="nav-item">counter</Link>
           <Link to="/list" className="nav-item">list</Link>
+          <Link to="/form" className="nav-item">form</Link>
         </div>
       </nav>
       {props.children}

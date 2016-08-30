@@ -12,6 +12,7 @@ import Layout from './Layout';
 import First from './pages/First';
 import Counter from './pages/Counter'
 import List from './pages/List';
+import Form from './pages/Form';
 
 const store = createStore(reducer, window.devToolsExtension && window.devToolsExtension());
 
@@ -24,6 +25,7 @@ class App extends React.Component {
             <Route path="first" component={First}/>
             <Route path="counter" component={Counter}/>
             <Route path="list" component={List}/>
+            <Route path="form" component={Form}/>
           </Route>
         </Router>
       </Provider>

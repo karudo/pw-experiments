@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Provider} from 'react-redux';
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 
 import thunk from 'redux-thunk';
 
@@ -30,13 +30,13 @@ class OurModel {
   get(prp) {
     return this.state[prp];
   }
-}``
+}
 
 const store = createStore(
   reducer,
-  applyMiddleware(
-    thunk,
-    window.devToolsExtension && window.devToolsExtension()
+  compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 );
 

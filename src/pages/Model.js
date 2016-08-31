@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 class ModelPage extends React.Component {
   render() {
-    return false;
+    return <div>190</div>;
   }
 }
 

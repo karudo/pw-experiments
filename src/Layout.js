@@ -14,6 +14,7 @@ export default function Layout(props) {
           <Link to="/counter" className="nav-item">counter</Link>
           <Link to="/list" className="nav-item">list</Link>
           <Link to="/form" className="nav-item">form</Link>
+          <Link to="/model" className="nav-item">model</Link>
         </div>
       </nav>
       {props.children}

@@ -14,7 +14,20 @@ function counter(state = 0, action) {
   return state;
 }
 
+function model(state = {}, action) {
+  switch (action.type) {
+    case 'CHANGE_MODEL':
+      state = {
+        ...state,
+        [action.modelName]: action.model
+      };
+      break;
+  }
+  return state;
+}
+
 export default combineReducers({
   counter,
+  model,
   form: formReducer
 });

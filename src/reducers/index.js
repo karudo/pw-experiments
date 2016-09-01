@@ -1,6 +1,6 @@
 /* eslint-disable operator-assignment, default-case */
 import {combineReducers} from 'redux';
-import {reducer as formReducer} from 'redux-form'
+import {reducer as formReducer} from 'redux-form';
 
 function counter(state = 0, action) {
   switch (action.type) {

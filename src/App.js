@@ -5,32 +5,18 @@ import {createStore, applyMiddleware, compose} from 'redux';
 
 import thunk from 'redux-thunk';
 
-import {Router, Route, browserHistory} from 'react-router'
+import {Router, Route, browserHistory} from 'react-router';
 
 import reducer from './reducers';
 
 
 import Layout from './Layout';
 import First from './pages/First';
-import Counter from './pages/Counter'
+import Counter from './pages/Counter';
 import List from './pages/List';
 import Form from './pages/Form';
 import Model from './pages/Model';
 
-class OurModel {
-  constructor(state) {
-    this.state = state;
-  }
-  set(obj) {
-    this.state = {
-      ...this.state,
-      ...obj
-    };
-  }
-  get(prp) {
-    return this.state[prp];
-  }
-}
 
 const store = createStore(
   reducer,

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ForEach from '../components/ForEach';
-import Value from '../components/Value'
+import Value from '../components/Value';
 
 const qwe = [{
   asd: 19998,

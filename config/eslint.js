@@ -46,6 +46,9 @@ module.exports = {
   },
 
   rules: {
+    "semi": [2, "always"],
+    "semi-spacing": [2, {"before": false, "after": true}],
+    "comma-spacing": [2, {"before": false, "after": true}],
     // http://eslint.org/docs/rules/
     'array-callback-return': 'warn',
     'default-case': ['warn', { commentPattern: '^no default$' }],

@@ -17,6 +17,6 @@ export default class ForEach extends React.Component {
           );
         })}
       </this.props.wrap>
-    )
+    );
   }
 }

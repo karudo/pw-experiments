@@ -1,4 +1,5 @@
 import React from 'react';
+import {isEqual} from 'lodash';
 
 import {connect} from 'react-redux';
 import storeShape from 'react-redux/lib/utils/storeShape';
@@ -38,9 +39,66 @@ function uberConnect() {
         this.state = {storeState: this.store.getState()};
       }
 
+      componentDidMount() {
+        this.trySubscribe();
+      }
+
+      componentWillReceiveProps(nextProps) {
+        if (!isEqual(nextProps, this.props)) {
+          this.haveOwnPropsChanged = true;
+        }
+      }
+
+      componentWillUnmount() {
+        this.tryUnsubscribe();
+        this.clearCache();
+      }
+
+      trySubscribe() {
+        if (this.unsubscribe) {
+          this.unsubscribe = this.store.subscribe(this.handleChange.bind(this));
+          this.handleChange();
+        }
+      }
+
+      tryUnsubscribe() {
+        if (this.unsubscribe) {
+          this.unsubscribe();
+          this.unsubscribe = null;
+        }
+      }
+
+      handleChange() {
+        if (!this.unsubscribe) {
+          return;
+        }
+
+        const storeState = this.store.getState();
+        const prevStoreState = this.state.storeState;
+        if (prevStoreState === storeState) {
+          return;
+        }
+
+        if (!this.doStatePropsDependOnOwnProps) {
+          const haveStatePropsChanged = tryCatch(this.updateStatePropsIfNeeded, this)
+          if (!haveStatePropsChanged) {
+            return
+          }
+          if (haveStatePropsChanged === errorObject) {
+            this.statePropsPrecalculationError = errorObject.value
+          }
+          this.haveStatePropsBeenPrecalculated = true
+        }
+
+        this.hasStoreStateChanged = true
+        this.setState({ storeState })
+
+      }
+
       render() {
         return <WrappedComponent/>;
       }
+
     }
 
     return UberConnect;

@@ -49,6 +49,7 @@ module.exports = {
     "semi": [2, "always"],
     "semi-spacing": [2, {"before": false, "after": true}],
     "comma-spacing": [2, {"before": false, "after": true}],
+    "react/sort-comp": [1],
     // http://eslint.org/docs/rules/
     'array-callback-return': 'warn',
     'default-case': ['warn', { commentPattern: '^no default$' }],
